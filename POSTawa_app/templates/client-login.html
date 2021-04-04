@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Fromularz logowania - PED</title>
+    <meta charset="utf-8">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <script src="scripts/login.js"></script>
+    <link rel="icon" type="image/png" href="/favicon.png"/>
+</head>
+<body class="registration_body">
+<nav>
+    <div class="logo">
+        <img class="logo_image" src="images/logo.png" alt="logo">
+        <h4 class="logo_title">Paczuch Express Delivery</h4>
+    </div>
+    <ul>
+        <li><a href="/">Strona główna</a></li>
+        {% if isValidCookie %}
+        <li><a href="/add_waybill">Nadaj paczkę</a></li>
+        <li><a href="/show_waybills_0">Historia</a></li>
+        <li><a href="/contact">Kontakt</a></li>
+        <li><a href="/logout">Wyloguj się</a></li>
+        {% else %}
+        <li><a href="/register">Zarejestuj się</a></li>
+        <li><a href="/login">Zaloguj</a></li>
+        <li><a href="/contact">Kontakt</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% if isValidCookie %}
+<section>
+    <h2>Jesteś już zalogowany :)</h2>
+</section>
+{% else %}
+
+<section>
+
+    <h2>Zaloguj się</h2>
+
+    <form id="login-form" class="login-form">
+
+        <div class="form-row">
+            <label for="login" class="required">Login</label><br>
+            <input id="login" type="text" name="login" class="input-field" placeholder="Pawel"/>
+        </div>
+
+
+        <div class="form-row">
+            <label for="password" class="required">Hasło</label><br>
+            <input id="password" type="password" name="password" class="input-field" placeholder="Hasło"/>
+        </div>
+
+
+        <div class="form-row">
+            <input id="button-log-form" type="submit" value="Zaloguj"/>
+        </div>
+
+    </form>
+        <div class="center">
+            <a href="/login_oauth2" class="pretty_green"><h4>Zaloguj się lub zarejestruj przy pomocy OAuth2</h4></a>
+        </div>
+    
+</section>
+{% endif %}
+<footer>
+    <p class="footer-inline left">&copy; 2020 Krzysztof Anderson</p>
+    <p class="footer-inline right">proudly powered by <img src="images/notepad25.jpg" alt="notepad icon"/></p>
+</footer>
+</body>
+</html>

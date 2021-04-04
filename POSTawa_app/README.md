@@ -1,0 +1,57 @@
+# ThridMilestone
+### Lista zadań
+- [X] Rozszerzyć naszą bazę danych o pole statusu listu przewozowego / paczki
+- [ ] Dodać identyfikator paczki w PDF i bazie
+- [ ] Aplikacja kuriera
+    - [ ] Logowanie kuriera
+    - [ ] Odebranie paczki od nadawcy
+        - [ ] Formularz z wpisaniem numeru paczki
+        - [ ] Zmiana stanu paczki
+        - [ ] Komunikat o zmianie statusu lub errorze
+    - [ ] Podanie id paczkomatu
+        - [ ] Token (1min)
+    - [ ] Dockerfile
+    - [ ] Wyświetlenie paczek kuriera
+    - [ ] Progresywna
+        - [ ] monitor
+        - [ ] tablet
+        - [ ] telefon
+- [ ] Aplikacja paczkomatu
+    - [ ] Wkładanie paczki przez nadawcę
+        - [ ] Podanie identyfikatora 
+    - [ ] Wyjmowanie paczki 
+        - [ ] Podanie tokenu i Wybór paczkomatu
+        - [ ] Wyświetlenie listy paczek w paczkomacie
+        - [ ] Zaznaczenie paczek
+        - [ ] Zapis stanu zaznaczenia (wyciągnięcie)
+        - [ ] Zmiana statusu paczki
+    - [ ] Dockerfile
+    - [ ] Responsywna (tablet różnej wielkości)
+- [ ] Aplikacja główna
+    - [ ] Edycja listy tak by można było usunąć list przewozowy
+        - [ ] Usunięcie z bazy
+        - [ ] Usunięcie PDFu
+    - [ ] Integracja z frontendem
+- [ ] Listy paczek
+    - [ ] Paginacja
+    - [ ] 3 poziom dojrzałości
+    - [ ] Poprawienie sposobu zliczania paczek
+- [ ] REST 
+- [ ] Swagger
+    - [ ] Aplikacja główna
+        - [ ] Testy
+        - [ ] Przepisanie
+    - [ ] Aplikacja kuriera
+        - [ ] Testy
+        - [ ] Przepisanie
+    - [ ] Aplikacja paczkomatu
+        - [ ] Testy
+        - [ ] Przepisanie
+    - [ ] Sprawienie by formData było w swaggerze
+    - [ ] Dodanie ładnych widoków dla errorów
+- [ ] ReadME
+    - [ ] Adresy 
+    - [ ] Instrukcja uruchomienia (jedno polecenie)
+    - [ ] Przemyślenia
+- [ ] Tag FINAL_RELEASE_P3
+- [ ] Posprzątać komentarze

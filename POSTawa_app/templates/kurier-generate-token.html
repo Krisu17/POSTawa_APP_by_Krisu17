@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Kurier-APP</title>
+    <meta charset="utf-8">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/favicon.png"/>
+    <script src="scripts/kurier-generate-token.js"></script>
+</head>
+<body class="registration_body">
+<nav>
+    <div class="logo">
+        <img class="logo_image" src="images/logo.png" alt="logo">
+        <h4 class="logo_title">Kurier-APP</h4>
+    </div>
+    <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/client_pickup">Odbierz od klienta</a></li>
+        <li><a href="/parcel_pickup">Odbierz z paczkomatu</a></li>
+        <li><a href="/show_packages_0">Pobrane paczki</a></li>
+        <li><a href="/logout">Wyloguj się</a></li>
+
+    </ul>
+</nav>
+<header>
+    <h2>Podaj nazwę paczkomatu, aby wygenerować token dostępu</h2>
+</header>
+<section>
+
+    <form id="token-form" class="login-form">
+
+        <div class="form-row">
+            <label for="paczkomat-id" class="required">Nazwa paczkomatu</label><br>
+            <input id="paczkomat-id" type="text" name="paczkomat-id" class="input-field" placeholder="p1"/>
+        </div>
+
+
+        <div class="form-row">
+            <input id="button-token-form" type="submit" value="Wygeneruj"/>
+        </div>
+
+    </form>
+<div class="token" >
+    <h2>Token:</h2><br>
+    <h2 id="generate_token_results"></h2>
+</div>
+</section>
+</body>
+</html>

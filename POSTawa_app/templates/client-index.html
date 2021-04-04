@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Paczuch Express Delivery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <img class="logo_image" src="images/logo.png" alt="logo">
+        <h4 class="logo_title">Paczuch Express Delivery</h4>
+    </div>
+    <ul>
+        <li><a href="/">Strona główna</a></li>
+        {% if isValidCookie %}
+        <li><a href="/add_waybill">Nadaj paczkę</a></li>
+        <li><a href="/show_waybills_0">Historia</a></li>
+        <li><a href="/contact">Kontakt</a></li>
+        <li><a href="/logout">Wyloguj się</a></li>
+        {% else %}
+        <li><a href="/register">Zarejestuj się</a></li>
+        <li><a href="/login">Zaloguj</a></li>
+        <li><a href="/contact">Kontakt</a></li>
+        {% endif %}
+    </ul>
+</nav>
+    <article>
+        <h3>Nadaj szybko przesyłkę</h3>
+        <p>Musisz nadać szybko przesyłkę? Boisz się formalności jakie narzucają na Ciebie tradycyjne paczkomaty? Z nami
+            to już nie problem! Dzięki innowacyjnemy systemowi informatycznemu</p>
+    </article>
+
+<article>
+    <h3>Dostawa już następnego dnia</h3>
+    <p>Czy miałeś tak kiedyś, że zamawiasz coś przez Internet i zaraz po zakupach już nie możesz się doczekać, kiedy
+        wesoła paczucha pojawi się w progu Twoich drzwi? My też tak mamy, dlatego staramy się maksymalnie skracać czas
+        podróży przesyłki, aby jak najszybciej trafiła do swojego szczęśliwego odbiorcy. Dzięki pracy wysokiej klasy
+        fachowców logistyki oraz dzięki wielomilionowym inwestycjom w najnowszą technologię, dostarczamy paczki już
+        nawet następnego dnia! 90% paczek jest odbieranych jeszcze tego samego dnia od nadawcy. 84% paczek jest
+        dostarczanych już następnego dnia po nadaniu! To ogólnopolski rekord! Sprawdź koniecznie sam!</p>
+</article>
+<article>
+    <h3>Szybko i tanio? Da się!</h3>
+    <p>Mała przesyłka na jutro? Nie ma problemu. Duża przesyłka, ale nie chcesz na nią wydać milionów monet? Żaden
+        problem. W Paczuch Delivery Express każdy znadzie coś dla siebie, co odpowiada jego wymaganiom i potrzebom.
+        Sprawdź przy pomocy tabelki ile będzie kosztować transport Twojej przesyłki!</p>
+
+    <table class="color-table">
+        <caption>Cennik Paczuch Delivery Express</caption>
+        <thead>
+        <tr>
+            <th class="price-table">Rozmiar przesyłki</th>
+            <th class="price-table">Jak najszybciej! Express!</th>
+            <th class="price-table">Standard</th>
+            <th class="price-table">Ekonomiczna</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="price-table">Do 0,5 kg</td>
+            <td class="price-table">15 PLN</td>
+            <td class="price-table">12 PLN</td>
+            <td class="price-table">9 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Od 0,5 kg do 1 kg</td>
+            <td class="price-table">16 PLN</td>
+            <td class="price-table">13 PLN</td>
+            <td class="price-table">10 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Od 1 kg do 3 kg</td>
+            <td class="price-table">18 PLN</td>
+            <td class="price-table">15 PLN</td>
+            <td class="price-table">13 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Od 3 kg do 5 kg</td>
+            <td class="price-table">22 PLN</td>
+            <td class="price-table">18 PLN</td>
+            <td class="price-table">15 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Od 5 kg do 10 kg</td>
+            <td class="price-table">25 PLN</td>
+            <td class="price-table">20 PLN</td>
+            <td class="price-table">17 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Od 10 kg do 20 kg</td>
+            <td class="price-table">30 PLN</td>
+            <td class="price-table">25 PLN</td>
+            <td class="price-table">21 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Od 20 kg do 30 kg</td>
+            <td class="price-table">36 PLN</td>
+            <td class="price-table">29 PLN</td>
+            <td class="price-table">25 PLN</td>
+        </tr>
+        </tbody>
+    </table>
+</article>
+<article>
+    <h3>Abonament? Czemu nie?</h3>
+    <p>Wysyłasz dużo paczek? Abonament wysyłkowy jest tym, czego dokładnie poszukujesz. To <b>jedyne</b> takie
+        rozwiązanie na rynku transportowym. Oferujemy różnorodne pakiety abonamentowe, dzięki temu każdy znajdzie coś
+        dla siebie. Płacisz raz, a zyskujesz spokój od opłat na cały miesiąc. Dzięki temu wysyłanie paczek jeszcze nigdy
+        nie było tak proste!</p>
+    <table class="color-table">
+        <caption>Cennik abonamentów</caption>
+        <thead>
+        <tr>
+            <th class="price-table">Abonament</th>
+            <th class="price-table">Pakiet</th>
+            <th class="price-table">Max liczba przesyłek w miesiącu</th>
+            <th class="price-table">Ubezpieczenie</th>
+            <th class="price-table">Cena</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="price-table">Premium Plus</td>
+            <td class="price-table">Express!</td>
+            <td class="price-table">100</td>
+            <td class="price-table">Tak</td>
+            <td class="price-table">1 500 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Premium</td>
+            <td class="price-table">Express!</td>
+            <td class="price-table">50</td>
+            <td class="price-table">Tak</td>
+            <td class="price-table">800 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Little Premium</td>
+            <td class="price-table">Express!</td>
+            <td class="price-table">20</td>
+            <td class="price-table">Tak</td>
+            <td class="price-table">360 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Standard Plus</td>
+            <td class="price-table">Standard</td>
+            <td class="price-table">70</td>
+            <td class="price-table">Tak</td>
+            <td class="price-table">840 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Standard</td>
+            <td class="price-table">Standard</td>
+            <td class="price-table">30</td>
+            <td class="price-table">Tak</td>
+            <td class="price-table">450 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Economy Plus</td>
+            <td class="price-table">Ekonomiczna</td>
+            <td class="price-table">70</td>
+            <td class="price-table">Nie</td>
+            <td class="price-table">630 PLN</td>
+        </tr>
+        <tr>
+            <td class="price-table">Economy</td>
+            <td class="price-table">Ekonomiczna</td>
+            <td class="price-table">20</td>
+            <td class="price-table">Nie</td>
+            <td class="price-table">300 PLN</td>
+        </tr>
+        </tbody>
+    </table>
+</article>
+
+<footer>
+    <p class="footer-inline left">&copy; 2020 Krzysztof Anderson</p>
+    <p class="footer-inline right">proudly powered by <img src="images/notepad25.jpg" alt="notepad icon"/></p>
+</footer>
+</body>
+</html>

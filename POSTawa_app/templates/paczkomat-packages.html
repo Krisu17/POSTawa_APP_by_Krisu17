@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Paczkomat-APP</title>
+    <meta charset="utf-8">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
+    <script src="scripts/paczkomat-show-and-pick-packages.js"></script>
+</head>
+<body class="registration_body">
+<nav>
+    <div class="logo">
+        <img class="logo_image" src="images/logo.png" alt="logo">
+        <h4 class="logo_title">Paczkomat-APP</h4>
+    </div>
+    <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/client_drop_{{p_id}}">Nadaj paczkę</a></li>
+        <li><a href="/courier_pickup_{{p_id}}">Dla kuriera</a></li>
+        <li>Wybrano paczkomat {{p_id}}</li>
+
+    </ul>
+</nav>
+<header>
+    <h2>Wybrano paczkomat </h2>
+    <h2 id="parcel-locker-id">{{p_id}}</h2>
+    <br><br>
+    <h2>Zobacz, jakie paczki znajdują się w tym paczkomacie!</h2>
+</header>
+<section>
+
+    
+
+    <table class="color-table">
+        {% for file in my_packages %}
+        <tr id={{file}}>
+            <th class="download_th">{{ file }}</th>
+            <th class="download_th" id="status_{{file}}" name="status"></th>
+            
+            <th class="download_th">
+                <input type="checkbox" id={{file}} name="checkboxes">
+            </th>
+            <th class="download_th">
+                <div>
+                    <a href="https://localhost:8081/waybill/{{file}}" target="blank">
+                        <button class="download">Pobierz</button>
+                    </a>
+                </div>
+            </th>
+
+        </tr>
+        {% endfor %}
+        <tr>
+            <th class="left">
+                {% if prev_start == None %}
+                {% else %}
+                <a href={{prev_start}}>
+                    <button class="remove">Poprzednia</button>
+                </a>
+                {% endif %}
+            </th>
+            <th></th>
+            <th></th>
+
+            <th class="right">
+                {% if next_start == None %}
+                {% else %}
+                <a href={{next_start}} >
+                    <button class="download">Następna</button>
+                </a>
+                {% endif %}
+            </th>
+        </tr>
+        
+        <input type="hidden" id="kurier_token" name="kurier_token" value="{{token}}">
+        <input type="hidden" id="kurier_login" name="kurier_login" value="{{user}}">
+        <input type="hidden" id="paczkomat_id" name="paczkomat_id" value="{{p_id}}">
+
+    </table>
+    <tr>
+        <button type="submit" class="download submit" id="pickup_button_id">Odbierz</button>
+    </tr>
+    <div class="center">
+        <div  id="place_for_message"></div>
+    </div>
+
+</section>
+</body>
+</html>

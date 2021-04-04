@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Historia paczek</title>
+    <meta charset="utf-8">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cambay&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
+    <script src="scripts/waybills.js"></script>
+</head>
+<body class="registration_body">
+    <nav>
+        <div class="logo">
+            <img class="logo_image" src="images/logo.png" alt="logo">
+            <h4 class="logo_title">Paczuch Express Delivery</h4>
+        </div>
+        <ul>
+            <li><a href="/">Strona główna</a></li>
+            {% if isValidCookie %}
+            <li><a href="/add_waybill">Nadaj paczkę</a></li>
+            <li><a href="/show_waybills_0">Historia</a></li>
+            <li><a href="/contact">Kontakt</a></li>
+            <li><a href="/logout">Wyloguj się</a></li>
+            {% else %}
+            <li><a href="/register">Zarejestuj się</a></li>
+            <li><a href="/login">Zaloguj</a></li>
+            <li><a href="/contact">Kontakt</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+<header>
+    <h2>Sprawdź historię swoich paczek!</h2>
+</header>
+<section>
+
+    
+
+    <table class="color-table">
+        <thead>
+            <tr>
+                <th class="price-table">Identyfikator paczki</th>
+                <th class="price-table">Status</th>
+                <th class="price-table">Data nadania</th>
+                <th class="price-table">Pobierz dokument</th>
+                <th class="price-table">Usuń paczkę</th>
+            </tr>
+            </thead>
+        {% for file in my_files %}
+        
+        <tr id={{file}}>
+            <th class="download_th">{{ file }}</th>
+            <th class="download_th" id="status_{{file}}" name="status"></th>
+            <th class="download_th" id="date_{{file}}" name="date"></th>
+            <th class="download_th">
+                <div>
+                    <form action="https://localhost:8081/waybill/{{file}}" target="blank">
+                        <input id="button-log-form" type="submit" class="download" value="Pobierz"/>
+                    <!-- <a href="https://localhost:8081/waybill/{{file}}" target="blank">
+                        <button class="download">Pobierz</button>
+                    </a> -->
+                    </form>
+                </div>
+            </th>
+            <th class="download_th">
+                <div>
+                    <form id={{file}} onsubmit=removeWaybill(id) target="blank">
+                    
+                        <input class="remove" id={{file}} type="submit" value="Usuń"></button>
+                    </form>
+                </div>
+            </th>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th class="left">
+                {% if prev_start == None %}
+                {% else %}
+                <a href={{prev_start}} >
+                    <button class="remove">Poprzednia</button>
+                </a>
+                {% endif %}
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th class="right">
+                {% if next_start == None %}
+                {% else %}
+                <a href={{next_start}}>
+                    <button class="download">Następna</button>
+                </a>
+                {% endif %}
+            </th>
+        </tr>
+    </table>
+    <div class="center">
+        <div><h3>Liczba wszystkich paczek: {{number_of_waybills}}</h3></div>
+        <div  id="place_for_message"></div>
+    </div>
+</section>
+</body>
+</html>

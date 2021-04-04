@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Nadaj paczkę - PED</title>
+    <meta charset="utf-8">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cambay&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
+    <script src="scripts/client-add-waybill.js"></script>
+</head>
+<body class="registration_body">
+    <nav>
+        <div class="logo">
+            <img class="logo_image" src="images/logo.png" alt="logo">
+            <h4 class="logo_title">Paczuch Express Delivery</h4>
+        </div>
+        <ul>
+            <li><a href="/">Strona główna</a></li>
+            {% if isValidCookie %}
+            <li><a href="/add_waybill">Nadaj paczkę</a></li>
+            <li><a href="/show_waybills_0">Historia</a></li>
+            <li><a href="/contact">Kontakt</a></li>
+            <li><a href="/logout">Wyloguj się</a></li>
+            {% else %}
+            <li><a href="/register">Zarejestuj się</a></li>
+            <li><a href="/login">Zaloguj</a></li>
+            <li><a href="/contact">Kontakt</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+<header>
+    <h2>Nadaj nową paczkę!</h2>
+</header>
+<section>
+    
+    <form action="https://localhost:8080/add_waybill/new" enctype="multipart/form-data" method="POST">
+
+        <div class="form-row">
+            <div class="name">
+                <label for="sender_name">Imię nadawcy</label>
+                <input id="sender_name" type="text" name="sender_name" placeholder="Joanna">
+            </div>
+        
+
+        <div class="surname">
+            <label for="sender_surname">Nazwisko nadawcy</label>
+            <input id="sender_surname" type="text" name="sender_surname" placeholder="Malinowska">
+        </div>
+        <br style="clear:both;" />
+        <div>
+            <label for="sender_adress">Adres nadawcy</label>
+            <input id="sender_street" type="text" name="sender_street" placeholder="Ulica">
+            <input id="sender_city" type="text" name="sender_city" placeholder="Miasto">
+            <input id="sender_postal" type="text" name="sender_postal" placeholder="Kod Pocztowy">
+            <input id="sender_country" type="text" name="sender_country" placeholder="Kraj">
+            <input id="sender_phone" type="phone" name="sender_phone" placeholder="522602933">
+        </div>    
+        <hr>
+        <div class="name">
+            <label for="recipient_name">Imię odbiorcy</label>
+            <input id="recipient_name" type="text" name="recipient_name" placeholder="Jan">
+        </div>
+
+        <div class="surname">
+            <label for="recipient_surname">Nazwisko odbiorcy</label>
+            <input id="recipient_surname" type="text" name="recipient_surname" placeholder="Kowalski"> 
+        </div>
+        <br style="clear:both;" />
+        <div>
+            <label for="recipient_adress">Adres odbiorcy</label>
+            <input id="recipient_street" type="text" name="recipient_street" placeholder="Ulica">
+            <input id="recipient_city" type="text" name="recipient_city" placeholder="Miasto">
+            <input id="recipient_postal" type="text" name="recipient_postal" placeholder="Kod Pocztowy">
+            <input id="recipient_country" type="text" name="recipient_country" placeholder="Kraj">
+            <input id="recipient_phone" type="phone" name="recipient_phone" placeholder="522602934">
+        </div>
+        <hr>
+        <div>
+            <label for="waybill_image">Zdjęcie</label>
+            <input id="waybill_image" type="file" name="waybill_image" accept="image/png, image/jpeg, image/jpg">
+        </div>
+            
+        <div>
+            <input id="add_new_waybill_form" onclick="sendMessageToRoom()" type="submit" value="Nadaj">
+        </div>
+    </div>
+    </form>
+
+
+</section>
+</body>
+</html>

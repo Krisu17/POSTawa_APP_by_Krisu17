@@ -1,0 +1,53 @@
+version: "3"
+services:
+  web-login:
+    build:
+      context: .
+      dockerfile: ./Docker/login/Dockerfile
+    ports: ["8080:8880"]
+    volumes: [./POSTawa_app:/POSTawa_app]
+    environment:
+      FLASK_ENV: development
+      LOGIN_JWT_SECRET: $LOGIN_JWT_SECRET
+      LAB_AUTH_SECRET: $LAB_AUTH_SECRET
+      OAUTH_CLIENT_SECRET: $OAUTH_CLIENT_SECRET
+  web-files:
+    build:
+      context: .
+      dockerfile: ./Docker/files/Dockerfile
+    ports: ["8081:8881"]
+    volumes: [./POSTawa_app:/POSTawa_app]
+    environment:
+      FLASK_ENV: development
+      LOGIN_JWT_SECRET: $LOGIN_JWT_SECRET
+  kurier-app:
+    build:
+      context: .
+      dockerfile: ./Docker/kurier/Dockerfile
+    ports: ["8082:8882"]
+    volumes: [./POSTawa_app:/POSTawa_app]
+    environment:
+      FLASK_ENV: development
+      LOGIN_JWT_SECRET: $LOGIN_JWT_SECRET
+      LAB_AUTH_SECRET: $LAB_AUTH_SECRET
+      OAUTH_CLIENT_SECRET: $OAUTH_CLIENT_SECRET
+  paczkomat-app:
+    build:
+      context: .
+      dockerfile: ./Docker/paczkomat/Dockerfile
+    ports: ["8083:8883"]
+    volumes: [./POSTawa_app:/POSTawa_app]
+    environment:
+      FLASK_ENV: development
+      LOGIN_JWT_SECRET: $LOGIN_JWT_SECRET
+  communicator_app:
+    build:
+      context: .
+      dockerfile: ./Docker/communicator/Dockerfile
+    ports: ["8084:8884"]
+    volumes: [./POSTawa_app:/POSTawa_app]
+    environment: 
+      FLASK_ENV: development
+      LOGIN_JWT_SECRET: $LOGIN_JWT_SECRET
+  redis:
+    image: "redis:alpine"

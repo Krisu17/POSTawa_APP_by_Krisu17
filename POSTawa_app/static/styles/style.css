@@ -1,0 +1,282 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    padding-bottom: 100px; /* it must be the same size as footer height */
+    background-image: url("../images/backgroundImage30.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.registration_body {
+    background-image: url("../images/green_dust_scratch.png");
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+article {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #015431;
+
+}
+
+.logo {
+    color: rgb(226, 226, 226);
+    font-size: 22px;
+    width: 30%;
+}
+
+.logo_title {
+    margin-top: 5%;
+}
+
+.logo_image {
+    max-width: 5rem;
+    float: left;
+    margin-right: 1rem;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(226, 226, 226);
+    font-size: 15px;
+}
+
+nav ul li a:hover {
+    color: #1effdd;
+    text-shadow: 1px 1px black;
+}
+
+section p,
+article p {
+    text-indent: 25px;
+    text-align: justify;
+}
+
+article h3 {
+    color: darkolivegreen;
+}
+
+article p {
+    color: #025d37;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+td {
+    padding: 20px;
+}
+
+.price-table{
+    vertical-align: bottom;
+}
+
+.caption-bottom {
+    caption-side: bottom;
+}
+
+.color-table th{
+    padding: 0.5rem;
+}
+
+.color-table tr:nth-child(odd) {
+    background-color: rgba(219, 219, 219, 0.9);
+}
+
+.color-table tr:nth-child(even) {
+    background-color: rgba(195, 195, 195, 0.9);
+}
+
+.color-table thead tr {
+    background-color: #015431 !important;
+    color: white;
+}
+
+.color-table tr:hover {
+    background-color: #F0F0F0;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(4, 148, 47, 0.384);
+    max-width: inherit;
+    width: 100%;
+    height: 46px;
+    font-size: 15px;
+    color: #015431;
+}
+
+.footer-inline {
+    display: inline-block;
+    width: 48%;
+    padding-left: 1%;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-img {
+    vertical-align: middle;
+}
+
+.image_box {
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+.warning-field {
+    display: inline-block;
+    width: auto;
+    padding: 4px;
+    background-color: #f44336;
+    color: white;
+    font-size: small;
+
+}
+
+.success-field {
+    display: inline-block;
+    width: auto;
+    padding: 4px;
+    background-color: #36f449;
+    color: black;
+    font-size: small;
+    box-shadow: 1px 1px black;
+}
+
+.form-row {
+    margin-left: 30%;
+    margin-right: 30%;
+    border: none;
+    text-align: left;
+    padding: 20px;
+}
+
+h1 {
+    color: #015431;
+    text-align: center;
+    font-size: 70px;
+}
+
+h2 {
+    color: #015431;
+    text-align: center;
+}
+
+.input-field {
+    border: none;
+    border-bottom: 2px solid #DFDFDF;
+    background-color: rgba(0, 0, 0, 0.07);
+    color: rgba(0, 0, 0, 0.64);
+    top: 40px;
+    left: 0;
+}
+
+.name {
+    float: left;
+    margin-right: 20px;
+}
+
+.surname {
+    float: left;
+}
+
+.download {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #4CAF50;
+  }
+
+.remove {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #f31414;
+  }
+
+
+.download_table, .download_th, .download_td {
+    border: 1px solid darkgoldenrod;
+  }
+
+input, label {
+    display:block;
+}
+
+.card-kurier {
+    justify-content: center;
+    width: 18rem;
+    background-color: #aafacd;
+}
+
+.submit {
+    background-color: rgb(0, 140, 255);
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.token {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pretty_green{
+    color: #015431;
+}

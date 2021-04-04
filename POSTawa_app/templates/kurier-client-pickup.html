@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Kurier-APP</title>
+    <meta charset="utf-8">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../static/images/logo.png"/>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
+    <script src="scripts/client-pickup.js"></script>
+</head>
+<body class="registration_body">
+<nav>
+    <div class="logo">
+        <img class="logo_image" src="images/logo.png" alt="logo">
+        <h4 class="logo_title">Kurier-APP</h4>
+    </div>
+    <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/client_pickup">Odbierz od klienta</a></li>
+        <li><a href="/parcel_pickup">Odbierz z paczkomatu</a></li>
+        <li><a href="/show_packages_0">Pobrane paczki</a></li>
+        <li><a href="/logout">Wyloguj się</a></li>
+
+    </ul>
+</nav>
+<section>
+    <h2>Wpisz numer odbieranej przesyłki</h2>
+</section>
+<section>
+<article>
+    <form id="package-form" class="login-form">
+    <div class="form-row">
+        <label for="package-id" class="required">Identyfikator paczki</label><br>
+        <input id="package-id" type="package-id" name="package-id" class="input-field" placeholder="Nr. przesyłki"/>
+    </div>
+
+
+    <div class="form-row">
+        <input id="button-package-form" type="submit" value="Odbierz"/>
+    </div>
+</form>
+</article>
+</section>
+
+<footer>
+    <p class="footer-inline left">&copy; 2020 Krzysztof Anderson</p>
+    <p class="footer-inline right">proudly powered by <img src="images/notepad25.jpg" alt="notepad icon"/></p>
+</footer>
+</body>
+</html>

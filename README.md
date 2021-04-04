@@ -1,4 +1,5 @@
 #POSTawa App by Krisu
+
 ##Uruchomienie aplikacji poprzez komendę:
 
 sudo docker-compose up --build
